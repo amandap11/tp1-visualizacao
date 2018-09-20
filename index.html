@@ -4,9 +4,41 @@
     <meta charset="utf-8">
     <title>TP1 - Visualização de Dados</title>
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript" src="data/presidente.js"></script>
+    <link href="style.css" rel="stylesheet">
   </head>
   <body>
-    <div id="votos-candidato-por-estado"></div>
-    <script src="index.js"></script>
+    <div id="votos-candidato-por-estado"
+      class="bar"
+      width="960"
+      height="500">
+    </div>
+    <script>
+
+      let data = [];
+
+      for (let i = 0; i < 1; i++){
+        console.log(presidents[i].key);
+        let cPresident = presidents[i];
+        for (let j = 0; j < cPresident.value.length; j++){
+            data.push({
+              "estado": cPresident.value[j].cat_state,
+              "votos": cPresident.value[j].num_votes
+            });
+        }
+      }
+
+      d3.select("#votos-candidato-por-estado")
+        .selectAll("div")
+        .data(data)
+        .enter().append("div")
+        .style("width", function(d) {
+          let votos = d.votos/20;
+          return votos + "px";
+        }).text(function(d) {
+          return d.estado;
+        });
+
+    </script>
   </body>
 </html>

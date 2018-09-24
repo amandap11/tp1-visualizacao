@@ -1,18 +1,31 @@
+svg {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+text {
+  padding-top: -30px;
+}
+
 .state {
   fill: #ddc;
   fill-opacity: 0.9;
 }
+
 .state_contour {
   fill: none;
-  stroke: black;
+  stroke: gray;
   stroke-linejoin: round;
+  stroke-width: 0.2;
 }
 
-.bar div {
-  font: 10px sans-serif;
-  background-color: steelblue;
-  text-align: right;
-  padding: 3px;
-  margin: 1px;
-  color: white;
+.titulo {
+  text-align: center;
+}
+
+.nome-presidente {
+  width: 240px;
+  height: 30px;
+  background-color: blue;
 }

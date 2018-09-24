@@ -3,21 +3,36 @@
   <head>
     <meta charset="utf-8">
     <title>TP1 - Visualização de Dados</title>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/d3-queue.v2.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+
+    <link href="style.css" rel="stylesheet"></link>
+
     <script type="text/javascript" src="data/presidente.js"></script>
-    <link href="style.css" rel="stylesheet">
   </head>
   <body>
-    <div id="votos-candidato-por-estado"
+
+    <script src="br-map.js"></script>
+
+    <svg id="app"
       class="bar"
       width="960"
       height="500">
-    </div>
+    </svg>
+
     <script>
 
-      let data = [];
+      /*let data = presidents.map(function (president, index) {
+        return (
+          <li> {{ president.key }} </li>
+        );
+      });*/
 
-      for (let i = 0; i < 1; i++){
+      var data = [];
+
+      for (let i = 0; i < presidents.length; i++){
         console.log(presidents[i].key);
         let cPresident = presidents[i];
         for (let j = 0; j < cPresident.value.length; j++){
@@ -27,18 +42,6 @@
             });
         }
       }
-
-      d3.select("#votos-candidato-por-estado")
-        .selectAll("div")
-        .data(data)
-        .enter().append("div")
-        .style("width", function(d) {
-          let votos = d.votos/20;
-          return votos + "px";
-        }).text(function(d) {
-          return d.estado;
-        });
-
     </script>
   </body>
 </html>

@@ -1,3 +1,13 @@
+.state {
+  fill: #ddc;
+  fill-opacity: 0.1;
+}
+.state_contour {
+  fill: none;
+  stroke: black;
+  stroke-linejoin: round;
+}
+
 .bar div {
   font: 10px sans-serif;
   background-color: steelblue;

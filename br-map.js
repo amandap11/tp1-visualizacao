@@ -1,12 +1,17 @@
 // Definição do tamanho do elemento svg na tela
-var width = 960,
+var width = 660,
     height = 600;
-var svg = d3.select("body").append("svg")
+
+var svg1 = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-// Definição das cores
-var color = d3.scale.linear().domain([1, 20]).range(['blue', 'red']);
+var svg2 = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var g1 = svg1.append("g");
+var g2 = svg2.append("g");
 
 // Escolha da projeção mercator e definição do centro do mapa
 var projection = d3.geo.mercator()
@@ -30,30 +35,88 @@ function ready(error, shp) {
   var states = topojson.feature(shp, shp.objects.estados);
   var states_contour = topojson.mesh(shp, shp.objects.estados);
 
-  // Desenhando e colorindo os estados
-  g.attr("class", "state")
+  // Desenhando e colorindo os estados - 1 turno
+  g1.attr("class", "state")
     .selectAll("path")
     .data(states.features)
     .enter()
     .append("path")
     .style('fill', function(d){
-      return color(d.properties.nome.replace(/\$+/g, '').length);
+      let partido = escolhePartidoMaisVotado(d.id, 1);
+      return color(partido);
+    }).attr("d", path);
+
+  // Desenhando e colorindo os estados - 2 turno
+  g2.attr("class", "state")
+    .selectAll("path")
+    .data(states.features)
+    .enter()
+    .append("path")
+    .style('fill', function(d){
+      let partido = escolhePartidoMaisVotado(d.id, 2);
+      return color(partido);
     }).attr("d", path);
 }
 
-var g = svg.append("g");
-/*var zoom = d3.behavior.zoom()
-  .translate([0, 0])
-  .scale(1)
-  .scaleExtent([1, 8])
-  .on("zoom", zoomed);
-svg.call(zoom) // delete this line to disable free zooming
-  .call(zoom.event);
+function escolhePartidoMaisVotado(estado, turno){
+  let votos = 0;
+  let partidoMaisVotado = '';
 
+  for (let i = 0; i < presidents.length; i++){
+    for (let j = 0; j < presidents[i].value.length; j++){
+      if (presidents[i].value[j].cat_state == estado
+        && presidents[i].value[j].num_turn == turno){
+        if (presidents[i].value[j].num_votes > votos){
+          votos = presidents[i].value[j].num_votes;
+          partidoMaisVotado = presidents[i].value[j].cat_party;
+        }
+      }
+    }
+  }
 
-// What to do when zooming
-function zoomed() {
-  g.style("stroke-width", 1.5 / d3.event.scale + "px");
-  g.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+  return partidoMaisVotado;
 }
-d3.select(self.frameElement).style("height", height + "px");*/
+
+// Definição das cores
+var color = function (partido){
+  let cor;
+  switch(partido){
+    case 'PSTU':
+      cor = '#E8DA1C';
+      break;
+    case 'PRTB':
+      cor = '#22660C';
+      break;
+    case 'PCB':
+      cor = '#F37F0A';
+      break;
+    case 'PSOL':
+      cor = '#E0079E';
+      break;
+    case 'PV':
+      cor = '#2DA929';
+      break;
+    case 'PSC':
+      cor = '#2DF429';
+      break;
+    case 'PSDC':
+      cor = '#B0990F';
+      break;
+    case 'PCO':
+      cor = '#73110B';
+      break;
+    case 'PT':
+      cor = '#FF0000';
+      break;
+    case 'PSDB':
+      cor = '#0F1973';
+      break;
+    case 'PSB':
+      cor = '#15B096';
+      break;
+    default:
+      cor = '#FFFFFF';
+      break;
+  }
+  return cor;
+}

@@ -1,4 +1,4 @@
-presidents = [{
+var presidents = [{
 	"key": "JOSÉ MARIA DE ALMEIDA",
 	"value": [{
 		"id_candidate_seq": "280000000001",

@@ -10,7 +10,9 @@
 
     <link href="style.css" rel="stylesheet"></link>
 
+    <script type="text/javascript" src="data/eleicoes_2014.js"></script>
     <script type="text/javascript" src="data/presidente.js"></script>
+
   </head>
   <body>
 
@@ -33,7 +35,7 @@
       var data = [];
 
       for (let i = 0; i < presidents.length; i++){
-        console.log(presidents[i].key);
+        //console.log(presidents[i].value[0].cat_party + ':' + presidents[i].key);
         let cPresident = presidents[i];
         for (let j = 0; j < cPresident.value.length; j++){
             data.push({

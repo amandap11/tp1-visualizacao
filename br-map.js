@@ -6,7 +6,7 @@ var svg = d3.select("body").append("svg")
     .attr("height", height);
 
 // Definição das cores
-var color = d3.scale.linear().domain([1, 25]).range(['blue', 'red']);
+var color = d3.scale.linear().domain([1, 20]).range(['blue', 'red']);
 
 // Escolha da projeção mercator e definição do centro do mapa
 var projection = d3.geo.mercator()
@@ -30,17 +30,15 @@ function ready(error, shp) {
   var states = topojson.feature(shp, shp.objects.estados);
   var states_contour = topojson.mesh(shp, shp.objects.estados);
 
-  // Desenhando estados
-  g.selectAll(".estado")
+  // Desenhando e colorindo os estados
+  g.attr("class", "state")
+    .selectAll("path")
     .data(states.features)
     .enter()
     .append("path")
-    .attr("class", "state")
-    .attr("d", path);
-  g.append("path")
-    .datum(states_contour)
-    .attr("d", path)
-    .attr("class", "state_contour");
+    .style('fill', function(d){
+      return color(d.properties.nome.replace(/\$+/g, '').length);
+    }).attr("d", path);
 }
 
 var g = svg.append("g");

@@ -26,9 +26,9 @@ svg {
   border: 1px black solid;
   width: 15px;
   height: 300px;
-  background-color: #FBEFFB;
-  background-image: -webkit-linear-gradient(to bottom, #FF0080, #FBEFFB);
-  background-image: linear-gradient(to bottom, #FF0080, #FBEFFB);
+  background-color: #FFF0F5;
+  background-image: -webkit-linear-gradient(to bottom, #6E7B8B, #FFF0F5);
+  background-image: linear-gradient(to bottom, #6E7B8B, #FFF0F5);
 }
 
 #titulo-legenda {

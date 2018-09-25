@@ -257,9 +257,9 @@ function calculaPercentualVotosNoEstado(estado, candidato){
   }
 
   percentualDeVotosNoEstado = (totalVotosNoEstado / totalVotos) * 100;
-  console.log("%: " + percentualDeVotosNoEstado + " Cor: " + color(percentualDeVotosNoEstado));
+  //console.log("%: " + percentualDeVotosNoEstado + " Cor: " + color(percentualDeVotosNoEstado));
   return percentualDeVotosNoEstado;
 }
 
 // Definição das cores
-var color = d3.scale.linear().domain([1, 10]).range(['#FBEFFB', '#FF0080']);
+var color = d3.scale.linear().domain([1, 10]).range(['#FFF0F5', '#6E7B8B']);

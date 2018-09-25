@@ -213,7 +213,7 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[8]);
-      console.log(votos + ": " + color(votos));
+      //console.log(votos + ": " + color(votos));
       return color(votos);
     }).attr("d", path);
 

@@ -19,6 +19,34 @@ svg {
   text-align: center;
 }
 
+#box-legenda {
+  position: absolute;
+  top: 200px;
+  right: 40px;
+  border: 1px black solid;
+  width: 15px;
+  height: 300px;
+  background: -webkit-linear-gradient(0deg, "#FF0080", "#FBEFFB");
+}
+
+#titulo-legenda {
+  width: 300px;
+  left: -130px;
+  top: 50px;
+  transform: rotate(-90deg);
+  font-size: 14px;
+}
+
+.legenda {
+  position: absolute;
+  font-size: 12px;
+  left: 15px;
+}
+
+#min {
+  top: 280px;
+}
+
 #conteudo {
   position: relative;
 }

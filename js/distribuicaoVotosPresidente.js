@@ -1,7 +1,7 @@
 // Definição do tamanho do elemento svg na tela
 var width = 240,
-    height = 265,
-    scale = 280,
+    height = 260,
+    scale = 275,
     margin = {top: 5, left: 5};
 
 // Escolha da projeção mercator e definição do centro do mapa
@@ -257,6 +257,7 @@ function calculaPercentualVotosNoEstado(estado, candidato){
   }
 
   percentualDeVotosNoEstado = (totalVotosNoEstado / totalVotos) * 100;
+  console.log("%: " + percentualDeVotosNoEstado + " Cor: " + color(percentualDeVotosNoEstado));
   return percentualDeVotosNoEstado;
 }
 

@@ -250,16 +250,16 @@ function calculaPercentualVotosNoEstado(estado, candidato){
   for (let i = 0; i < candidato.value.length; i++){
     if (candidato.value[i].num_turn == 1){
         totalVotos += Number(candidato.value[i].num_votes);
-    }
-    if (candidato.value[i].cat_state == estado){
-      totalVotosNoEstado = Number(candidato.value[i].num_votes);
+        if (candidato.value[i].cat_state == estado){
+          totalVotosNoEstado = Number(candidato.value[i].num_votes);
+        }
     }
   }
 
   percentualDeVotosNoEstado = (totalVotosNoEstado / totalVotos) * 100;
-  //console.log("%: " + percentualDeVotosNoEstado + " Cor: " + color(percentualDeVotosNoEstado));
+  console.log("%: " + percentualDeVotosNoEstado + " Cor: " + color(percentualDeVotosNoEstado));
   return percentualDeVotosNoEstado;
 }
 
 // Definição das cores
-var color = d3.scale.linear().domain([1, 10]).range(['#FFF0F5', '#6E7B8B']);
+var color = d3.scale.linear().domain([1, 20]).range(['#FFFFFF', '#000000']);

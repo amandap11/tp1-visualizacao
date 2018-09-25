@@ -1,11 +1,6 @@
 svg {
   padding-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-text {
-  padding-top: -30px;
+  padding-top: 35px;
 }
 
 .state {
@@ -24,8 +19,63 @@ text {
   text-align: center;
 }
 
+#conteudo {
+  position: relative;
+}
+
 .nome-presidente {
-  width: 240px;
+  width: 220px;
   height: 30px;
-  background-color: blue;
+  position: absolute;
+  padding-left: 5px;
+}
+
+#presidente1 {
+  left: 10px;
+  top: 140px;
+}
+
+#presidente2 {
+  left: 255px;
+  top: 140px;
+}
+
+#presidente3 {
+  left: 500px;
+  top: 140px;
+}
+
+#presidente4 {
+  left: 745px;
+  top: 140px;
+}
+
+#presidente5 {
+  left: 990px;
+  top: 120px;
+}
+
+#presidente6 {
+  left: 10px;
+  top: 415px;
+}
+
+#presidente7 {
+  left: 255px;
+  top: 415px;
+}
+
+#presidente8 {
+  left: 500px;
+  top: 415px;
+}
+
+#presidente9 {
+  left: 745px;
+  top: 415px;
+}
+
+#presidente10 {
+  left: 990px;
+  top: 415px;
 }

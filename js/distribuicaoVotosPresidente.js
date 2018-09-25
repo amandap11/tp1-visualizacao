@@ -1,7 +1,7 @@
 // Definição do tamanho do elemento svg na tela
 var width = 240,
-    height = 240,
-    scale = 310,
+    height = 265,
+    scale = 280,
     margin = {top: 5, left: 5};
 
 // Escolha da projeção mercator e definição do centro do mapa

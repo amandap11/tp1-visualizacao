@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>TP1 - Visualização de Dados</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <script src="https://d3js.org/d3-queue.v2.min.js"></script>
     <script src="https://d3js.org/topojson.v1.min.js"></script>
@@ -57,7 +58,28 @@
 
     </div>
 
-    <script src="js/distribuicaoVotosPresidente.js"></script>
+    <div id="conteudo">
+      <script src="js/distribuicaoVotosPresidente.js"></script>
+    </div>
+
+    <div id="presidente1" class="nome-presidente"></div>
+    <div id="presidente2" class="nome-presidente"></div>
+    <div id="presidente3" class="nome-presidente"></div>
+    <div id="presidente4" class="nome-presidente"></div>
+    <div id="presidente5" class="nome-presidente"></div>
+    <div id="presidente6" class="nome-presidente"></div>
+    <div id="presidente7" class="nome-presidente"></div>
+    <div id="presidente8" class="nome-presidente"></div>
+    <div id="presidente9" class="nome-presidente"></div>
+    <div id="presidente10" class="nome-presidente"></div>
+
+    <script>
+      for (let i = 1; i <= presidents.length; i++){
+        let j = i - 1;
+        let idDiv = '#presidente' + i;
+        $(idDiv).text(presidents[j].key);
+      }
+    </script>
 
   </body>
 </html>

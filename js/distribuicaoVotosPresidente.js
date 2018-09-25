@@ -1,17 +1,17 @@
 // Definição do tamanho do elemento svg na tela
-var width = 240,
+let width = 240,
     height = 260,
     scale = 275,
     margin = {top: 5, left: 5};
 
 // Escolha da projeção mercator e definição do centro do mapa
-var projection = d3.geo.mercator()
+let projection = d3.geo.mercator()
   .scale(scale)
   .center([-52, -15])
   .translate([width / 2, height / 2]);
 
 // Variável utilizada para desenhar o mapa de acordo com a projeção escolhida
-var path = d3.geo.path()
+let path = d3.geo.path()
   .projection(projection);
 
 // Carrega os dados
@@ -19,63 +19,63 @@ d3_queue.queue()
     .defer(d3.json, "./br-states.json")
     .await(ready);
 
-var svg1 = d3.select("body").append("svg")
+let svg1 = d3.select("body").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-var svg2 = d3.select("body").append("svg")
+let svg2 = d3.select("body").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-var svg3 = d3.select("body").append("svg")
+let svg3 = d3.select("body").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-var svg4 = d3.select("body").append("svg")
+let svg4 = d3.select("body").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-var svg5 = d3.select("body").append("svg")
+let svg5 = d3.select("body").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-var svg6 = d3.select("body").append("svg")
+let svg6 = d3.select("body").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-var svg7 = d3.select("body").append("svg")
+let svg7 = d3.select("body").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-var svg8 = d3.select("body").append("svg")
+let svg8 = d3.select("body").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-var svg9 = d3.select("body").append("svg")
+let svg9 = d3.select("body").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-var svg10 = d3.select("body").append("svg")
+let svg10 = d3.select("body").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-var g1 = svg1.append("g");
-var g2 = svg2.append("g");
-var g3 = svg3.append("g");
-var g4 = svg4.append("g");
-var g5 = svg5.append("g");
-var g6 = svg6.append("g");
-var g7 = svg7.append("g");
-var g8 = svg8.append("g");
-var g9 = svg9.append("g");
-var g10 = svg10.append("g");
+let g1 = svg1.append("g");
+let g2 = svg2.append("g");
+let g3 = svg3.append("g");
+let g4 = svg4.append("g");
+let g5 = svg5.append("g");
+let g6 = svg6.append("g");
+let g7 = svg7.append("g");
+let g8 = svg8.append("g");
+let g9 = svg9.append("g");
+let g10 = svg10.append("g");
 
 function ready(error, shp) {
   if (error) throw error;
 
   // Extração dos estados e dos contornos dos estados
-  var states = topojson.feature(shp, shp.objects.estados);
-  var states_contour = topojson.mesh(shp, shp.objects.estados);
+  let states = topojson.feature(shp, shp.objects.estados);
+  let states_contour = topojson.mesh(shp, shp.objects.estados);
 
   // Desenhando e colorindo os estados
   g1.attr("class", "state")
@@ -261,4 +261,4 @@ function calculaPercentualVotosNoEstado(estado, candidato){
 }
 
 // Definição das cores
-var color = d3.scale.linear().domain([1, 50]).range(['#FFFFFF', '#000000']);
+let color = d3.scale.linear().domain([1, 50]).range(['#FFFFFF', '#000000']);

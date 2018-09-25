@@ -5,7 +5,7 @@ svg {
 
 .state {
   fill: #ddc;
-  fill-opacity: 0.9;
+  fill-opacity: 1;
 }
 
 .state_contour {
@@ -45,8 +45,23 @@ svg {
   left: 15px;
 }
 
-#min {
-  top: 260px;
+#minName {
+  top: 280px;
+  display: none;
+}
+
+#maxName {
+  top: 280px;
+  display: none;
+}
+
+#minValue {
+  top: 280px;
+  left: -20px;
+}
+
+#maxValue {
+  left: -25px;
 }
 
 #conteudo {
@@ -54,35 +69,36 @@ svg {
 }
 
 .nome-presidente {
-  width: 220px;
+  width: 250px;
   height: 30px;
   position: absolute;
   padding-left: 5px;
+  font-size: 12px;
 }
 
 #presidente1 {
   left: 10px;
-  top: 140px;
+  top: 150px;
 }
 
 #presidente2 {
   left: 255px;
-  top: 140px;
+  top: 150px;
 }
 
 #presidente3 {
   left: 500px;
-  top: 140px;
+  top: 150px;
 }
 
 #presidente4 {
   left: 745px;
-  top: 140px;
+  top: 150px;
 }
 
 #presidente5 {
   left: 990px;
-  top: 120px;
+  top: 150px;
 }
 
 #presidente6 {

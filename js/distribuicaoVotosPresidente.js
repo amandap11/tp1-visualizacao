@@ -213,7 +213,7 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[8]);
-      // console.log(d.id + ": " + votos);
+      console.log(votos + ": " + color(votos));
       return color(votos);
     }).attr("d", path);
 
@@ -229,7 +229,6 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[9]);
-      // console.log(d.id + ": " + votos);
       return color(votos);
     }).attr("d", path);
 
@@ -257,9 +256,9 @@ function calculaPercentualVotosNoEstado(estado, candidato){
   }
 
   percentualDeVotosNoEstado = (totalVotosNoEstado / totalVotos) * 100;
-  console.log("%: " + percentualDeVotosNoEstado + " Cor: " + color(percentualDeVotosNoEstado));
+  //console.log("%: " + percentualDeVotosNoEstado + " Cor: " + color(percentualDeVotosNoEstado));
   return percentualDeVotosNoEstado;
 }
 
 // Definição das cores
-var color = d3.scale.linear().domain([1, 20]).range(['#FFFFFF', '#000000']);
+var color = d3.scale.linear().domain([1, 50]).range(['#FFFFFF', '#000000']);

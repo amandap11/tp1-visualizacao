@@ -10,7 +10,7 @@ svg {
 
 .state_contour {
   fill: none;
-  stroke: gray;
+  stroke: black;
   stroke-linejoin: round;
   stroke-width: 0.2;
 }
@@ -124,4 +124,15 @@ svg {
 #presidente10 {
   left: 990px;
   top: 415px;
+}
+
+#presidente11 {
+  left: 10px;
+  top: 680px;
+}
+
+#visualizacao1 {
+  left: 25%;
+  width: 50%;
+  height: 500px;
 }

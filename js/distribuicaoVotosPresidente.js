@@ -59,6 +59,10 @@ let svg10 = d3.select("body").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
+let svg11 = d3.select("body").append("svg")
+            .attr("width", width + margin.left)
+            .attr("height", height + margin.top);
+
 let g1 = svg1.append("g");
 let g2 = svg2.append("g");
 let g3 = svg3.append("g");
@@ -69,6 +73,7 @@ let g7 = svg7.append("g");
 let g8 = svg8.append("g");
 let g9 = svg9.append("g");
 let g10 = svg10.append("g");
+let g11 = svg11.append("g");
 
 function ready(error, shp) {
   if (error) throw error;
@@ -236,6 +241,21 @@ function ready(error, shp) {
    .datum(states_contour)
    .attr("d", path)
    .attr("class", "state_contour");
+
+  g11.attr("class", "state")
+   .selectAll("path")
+   .data(states.features)
+   .enter()
+   .append("path")
+   .style('fill', function(d){
+     let votos = calculaPercentualVotosNoEstado(d.id, presidents[9]);
+     return color(votos);
+   }).attr("d", path);
+
+  g11.append("path")
+  .datum(states_contour)
+  .attr("d", path)
+  .attr("class", "state_contour");
 
 }
 

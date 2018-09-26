@@ -16,7 +16,7 @@ let path = d3.geo.path()
 
 // Carrega os dados
 d3_queue.queue()
-    .defer(d3.json, "./br-states.json")
+    .defer(d3.json, "data/br-states.json")
     .await(ready);
 
 let svg1 = d3.select("body").append("svg")

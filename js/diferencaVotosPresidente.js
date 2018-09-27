@@ -64,6 +64,9 @@ let chart1 = c3.generate({
       'Segundo Turno': 'scatter'
     }
   },
+  point: {
+    r: 5
+  },
   legend: {
     show: true,
     position: 'right'

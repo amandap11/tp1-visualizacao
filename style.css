@@ -1,5 +1,4 @@
-.index {
-  padding: 40px 15px;
+#index {
   text-align: center;
 }
 
@@ -80,7 +79,9 @@ svg {
 }
 
 #diferencaVotos {
-  left: 20%;
-  width: 60%;
   height: 500px;
+}
+
+.c3-circle {
+  opacity: 1 !important;
 }

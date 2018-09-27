@@ -1,6 +1,6 @@
 // Definição do tamanho do elemento svg na tela
 let width = 190,
-    height = 180,
+    height = 190,
     scale = 180,
     margin = {top: 5, left: 5};
 
@@ -19,49 +19,38 @@ d3_queue.queue()
     .defer(d3.json, "data/br-states.json")
     .await(ready);
 
-let svg1 = d3.select("#vis").append("svg")
-            .attr("width", width + margin.left)
-            .attr("height", height + margin.top);
+let svg1 = d3.select("#svg1").append("svg")
+            .attr("height", height);
 
-let svg2 = d3.select("#vis").append("svg")
-            .attr("width", width + margin.left)
-            .attr("height", height + margin.top);
+let svg2 = d3.select("#svg2").append("svg")
+            .attr("height", height);
 
-let svg3 = d3.select("#vis").append("svg")
-            .attr("width", width + margin.left)
-            .attr("height", height + margin.top);
+let svg3 = d3.select("#svg3").append("svg")
+            .attr("height", height);
 
-let svg4 = d3.select("#vis").append("svg")
-            .attr("width", width + margin.left)
-            .attr("height", height + margin.top);
+let svg4 = d3.select("#svg4").append("svg")
+            .attr("height", height);
 
-let svg5 = d3.select("#vis").append("svg")
-            .attr("width", width + margin.left)
-            .attr("height", height + margin.top);
+let svg5 = d3.select("#svg5").append("svg")
+            .attr("height", height);
 
-let svg6 = d3.select("#vis").append("svg")
-            .attr("width", width + margin.left)
-            .attr("height", height + margin.top);
+let svg6 = d3.select("#svg6").append("svg")
+            .attr("height", height);
 
-let svg7 = d3.select("#vis").append("svg")
-            .attr("width", width + margin.left)
-            .attr("height", height + margin.top);
+let svg7 = d3.select("#svg7").append("svg")
+            .attr("height", height);
 
-let svg8 = d3.select("#vis").append("svg")
-            .attr("width", width + margin.left)
-            .attr("height", height + margin.top);
+let svg8 = d3.select("#svg8").append("svg")
+            .attr("height", height);
 
-let svg9 = d3.select("#vis").append("svg")
-            .attr("width", width + margin.left)
-            .attr("height", height + margin.top);
+let svg9 = d3.select("#svg9").append("svg")
+            .attr("height", height);
 
-let svg10 = d3.select("#vis").append("svg")
-            .attr("width", width + margin.left)
-            .attr("height", height + margin.top);
+let svg10 = d3.select("#svg10").append("svg")
+            .attr("height", height);
 
-let svg11 = d3.select("#vis").append("svg")
-            .attr("width", width + margin.left)
-            .attr("height", height + margin.top);
+let svg11 = d3.select("#svg11").append("svg")
+            .attr("height", height);
 
 let g1 = svg1.append("g");
 let g2 = svg2.append("g");
@@ -90,7 +79,6 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[0]);
-      // console.log(d.id + ": " + votos);
       return color(votos);
     }).attr("d", path);
 
@@ -106,7 +94,6 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[1]);
-      // console.log(d.id + ": " + votos);
       return color(votos);
     }).attr("d", path);
 
@@ -122,7 +109,6 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[2]);
-      // console.log(d.id + ": " + votos);
       return color(votos);
     }).attr("d", path);
 
@@ -138,7 +124,6 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[3]);
-      // console.log(d.id + ": " + votos);
       return color(votos);
     }).attr("d", path);
 
@@ -154,7 +139,6 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[4]);
-      // console.log(d.id + ": " + votos);
       return color(votos);
     }).attr("d", path);
 
@@ -170,7 +154,6 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[5]);
-      // console.log(d.id + ": " + votos);
       return color(votos);
     }).attr("d", path);
 
@@ -186,7 +169,6 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[6]);
-      // console.log(d.id + ": " + votos);
       return color(votos);
     }).attr("d", path);
 
@@ -202,7 +184,6 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[7]);
-      // console.log(d.id + ": " + votos);
       return color(votos);
     }).attr("d", path);
 
@@ -218,7 +199,6 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[8]);
-      //console.log(votos + ": " + color(votos));
       return color(votos);
     }).attr("d", path);
 
@@ -276,7 +256,6 @@ function calculaPercentualVotosNoEstado(estado, candidato){
   }
 
   percentualDeVotosNoEstado = (totalVotosNoEstado / totalVotos) * 100;
-  //console.log("%: " + percentualDeVotosNoEstado + " Cor: " + color(percentualDeVotosNoEstado));
   return percentualDeVotosNoEstado;
 }
 

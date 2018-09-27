@@ -50,43 +50,118 @@
       </span>
     </nav>
 
-    <div class="titulo">
-      <h2>Distribuição dos votos dos candidatos à presidência</h2>
-    </div>
-
-    <div id="box-legenda">
-      <div id="titulo-legenda" class="legenda">Concentração dos votos</div>
-      <div id="maxName" class="legenda">Máx.</div>
-      <div id="maxValue" class="legenda">50%</div>
-      <div id="minName" class="legenda">Min.</div>
-      <div id="minValue" class="legenda">0%</div>
-    </div>
-
-    <div id="vis">
-      <div id="conteudo">
-        <script src="js/distribuicaoVotosPresidente.js"></script>
+    <div class="container">
+      <div class="row">
+        <div class="titulo col-md-1"></div>
+        <div class="titulo col-md-10">
+          <h2>Distribuição dos votos dos candidatos à presidência</h2>
+        </div>
+        <div class="titulo col-md-1"></div>
       </div>
+      <br>
+      <div class="row">
+        <!-- Primeira coluna: vazia -->
+        <div class="col-md-2"></div>
 
-      <div id="presidente1" class="nome-presidente"></div>
-      <div id="presidente2" class="nome-presidente"></div>
-      <div id="presidente3" class="nome-presidente"></div>
-      <div id="presidente4" class="nome-presidente"></div>
-      <div id="presidente5" class="nome-presidente"></div>
-      <div id="presidente6" class="nome-presidente"></div>
-      <div id="presidente7" class="nome-presidente"></div>
-      <div id="presidente8" class="nome-presidente"></div>
-      <div id="presidente9" class="nome-presidente"></div>
-      <div id="presidente10" class="nome-presidente"></div>
-      <div id="presidente11" class="nome-presidente"></div>
+        <!-- Segunda coluna: mapas 1, 5 e 9 -->
+        <div class="col-md-2">
+          <div class="row">
+            <div id="presidente1"
+                class="row nome-presidente">
+            </div>
+            <div id="svg1" class="row"></div>
+          </div>
+          <div class="row">
+            <div id="presidente5"
+                class="row nome-presidente">
+            </div>
+            <div id="svg5" class="row"></div>
+          </div>
+          <div class="row">
+            <div id="presidente9"
+                class="row nome-presidente">
+            </div>
+            <div id="svg9" class="row"></div>
+          </div>
+        </div>
 
-      <script>
-        for (let i = 1; i <= presidents.length; i++){
-          let j = i - 1;
-          let idDiv = '#presidente' + i;
-          $(idDiv).text(presidents[j].key);
-        }
-      </script>
-      
+        <!-- Terceira coluna: mapas 2, 6 e 10 -->
+        <div class="col-md-2">
+          <div class="row">
+            <div id="presidente2"
+                class="row nome-presidente">
+            </div>
+            <div id="svg2" class="row"></div>
+          </div>
+          <div class="row">
+            <div id="presidente6"
+                class="row nome-presidente">
+            </div>
+            <div id="svg6" class="row"></div>
+          </div>
+          <div class="row">
+            <div id="presidente10"
+                class="row nome-presidente">
+            </div>
+            <div id="svg10" class="row"></div>
+          </div>
+        </div>
+
+        <!-- Quarta coluna: mapas 3, 7 e 11 -->
+        <div class="col-md-2">
+          <div class="row">
+            <div id="presidente3"
+                class="row nome-presidente">
+            </div>
+            <div id="svg3" class="row"></div>
+          </div>
+          <div class="row">
+            <div id="presidente7"
+                class="row nome-presidente">
+            </div>
+            <div id="svg7" class="row"></div>
+          </div>
+          <div class="row">
+            <div id="presidente11"
+                class="row nome-presidente">
+            </div>
+            <div id="svg11" class="row"></div>
+          </div>
+        </div>
+
+        <!-- Quinta coluna: mapas 4 e 8 -->
+        <div class="col-md-2">
+          <div class="row">
+            <div id="presidente4"
+                class="row nome-presidente">
+            </div>
+            <div id="svg4" class="row"></div>
+          </div>
+          <div class="row">
+            <div id="presidente8"
+                class="row nome-presidente">
+            </div>
+            <div id="svg8" class="row"></div>
+          </div>
+          <div class="row"></div>
+        </div>
+
+        <!-- Sexta coluna: legenda -->
+        <div class="col-md-2">
+
+        </div>
+
+        <script src="js/distribuicaoVotosPresidente.js"></script>
+
+        <script>
+          for (let i = 1; i <= presidents.length; i++){
+            let j = i - 1;
+            let idDiv = '#presidente' + i;
+            $(idDiv).text(presidents[j].key);
+          }
+        </script>
+
+      </div>
     </div>
 
   </body>

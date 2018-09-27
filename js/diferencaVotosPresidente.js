@@ -3,14 +3,12 @@ let nomesCandidatos = [];
 let votosTurno1 = ['Turno 1'];
 let votosTurno2 = ['Turno 2'];
 let diferencaVotos = ['Diferença'];
-let cores = [];
 
 for (let i = 0; i < presidents.length; i++){
   let nomeCandidato = presidents[i].key;
   let totalTurno1 = 0;
   let totalTurno2 = 0;
   let dif = 0;
-  let participou2Turno = false;
 
   for (let j = 0; j < presidents[i].value.length; j++){
     if (presidents[i].value[j].num_turn == 1){
@@ -30,8 +28,7 @@ for (let i = 0; i < presidents.length; i++){
     nome: nomeCandidato,
     turno1: totalTurno1,
     turno2: totalTurno2,
-    diferenca: dif,
-    presenteNoSegundoTurno: participou2Turno
+    diferenca: dif
   }
 
   candidatos.push(candidato);
@@ -54,7 +51,7 @@ for (let i = 0; i < candidatos.length; i++){
 }
 
 let chart1 = c3.generate({
-  bindto: '#visualizacao1',
+  bindto: '#diferencaVotos',
   data: {
     columns: [
       votosTurno1,
@@ -96,6 +93,12 @@ let chart1 = c3.generate({
     width: 20
   },
   tooltip: {
-    show: true
+    show: true,
+    format: {
+      value: function (value) {
+        let format = d3.format(',');
+        return format(value);
+      }
+    }
   }
 });

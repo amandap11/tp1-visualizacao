@@ -1,3 +1,8 @@
+.index {
+  padding: 40px 15px;
+  text-align: center;
+}
+
 svg {
   padding-left: 10px;
   padding-top: 35px;
@@ -131,7 +136,7 @@ svg {
   top: 680px;
 }
 
-#visualizacao1 {
+#diferencaVotos {
   left: 25%;
   width: 50%;
   height: 500px;

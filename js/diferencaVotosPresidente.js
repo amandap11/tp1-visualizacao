@@ -1,7 +1,7 @@
 let candidatos = [];
 let nomesCandidatos = [];
-let votosTurno1 = ['Turno 1'];
-let votosTurno2 = ['Turno 2'];
+let votosTurno1 = ['Primeiro Turno'];
+let votosTurno2 = ['Segundo Turno'];
 let diferencaVotos = ['Diferença entre os turnos'];
 
 for (let i = 0; i < presidents.length; i++){
@@ -60,8 +60,8 @@ let chart1 = c3.generate({
     ],
     types: {
       'Diferença entre os turnos': 'bar',
-      'Turno 1': 'scatter',
-      'Turno 2': 'scatter'
+      'Primeiro Turno': 'scatter',
+      'Segundo Turno': 'scatter'
     }
   },
   legend: {

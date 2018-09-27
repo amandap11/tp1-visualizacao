@@ -4,7 +4,9 @@
 }
 
 svg {
+  padding-bottom: 5px;
   margin-top: -25px;
+  margin-bottom: -14px;
 }
 
 .state {
@@ -24,9 +26,6 @@ svg {
 }
 
 #box-legenda {
-  position: absolute;
-  top: 200px;
-  right: 40px;
   border: 1px black solid;
   width: 15px;
   height: 300px;
@@ -35,9 +34,13 @@ svg {
   background-image: linear-gradient(to bottom, #000000, #FFFFFF);
 }
 
+.espaco-branco {
+  height: 20%;
+}
+
 #titulo-legenda {
   width: 300px;
-  left: -130px;
+  left: -115px;
   top: 60px;
   transform: rotate(-90deg);
   font-size: 14px;
@@ -61,11 +64,11 @@ svg {
 
 #minValue {
   top: 280px;
-  left: -20px;
+  left: -5px;
 }
 
 #maxValue {
-  left: -25px;
+  left: -10px;
 }
 
 .nome-presidente {

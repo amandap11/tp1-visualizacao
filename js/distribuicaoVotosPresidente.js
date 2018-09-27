@@ -1,7 +1,7 @@
 // Definição do tamanho do elemento svg na tela
-let width = 240,
-    height = 260,
-    scale = 275,
+let width = 190,
+    height = 180,
+    scale = 180,
     margin = {top: 5, left: 5};
 
 // Escolha da projeção mercator e definição do centro do mapa
@@ -19,47 +19,47 @@ d3_queue.queue()
     .defer(d3.json, "data/br-states.json")
     .await(ready);
 
-let svg1 = d3.select("body").append("svg")
+let svg1 = d3.select("#vis").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-let svg2 = d3.select("body").append("svg")
+let svg2 = d3.select("#vis").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-let svg3 = d3.select("body").append("svg")
+let svg3 = d3.select("#vis").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-let svg4 = d3.select("body").append("svg")
+let svg4 = d3.select("#vis").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-let svg5 = d3.select("body").append("svg")
+let svg5 = d3.select("#vis").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-let svg6 = d3.select("body").append("svg")
+let svg6 = d3.select("#vis").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-let svg7 = d3.select("body").append("svg")
+let svg7 = d3.select("#vis").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-let svg8 = d3.select("body").append("svg")
+let svg8 = d3.select("#vis").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-let svg9 = d3.select("body").append("svg")
+let svg9 = d3.select("#vis").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-let svg10 = d3.select("body").append("svg")
+let svg10 = d3.select("#vis").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 
-let svg11 = d3.select("body").append("svg")
+let svg11 = d3.select("#vis").append("svg")
             .attr("width", width + margin.left)
             .attr("height", height + margin.top);
 

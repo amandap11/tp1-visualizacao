@@ -73,6 +73,10 @@ let chart1 = c3.generate({
       'Segundo Turno': 'scatter'
     }
   },
+  // Define as cores
+  color: {
+    pattern: ['#A4A4A4', '#2E2E2E', '#088A29']
+  },
   // Define o tamanho dos pontos
   point: {
     r: 5

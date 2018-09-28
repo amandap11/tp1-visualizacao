@@ -85,3 +85,7 @@ svg {
 .c3-circle {
   opacity: 1 !important;
 }
+
+.c3-axis-y-label {
+  font-size: 12px;
+}

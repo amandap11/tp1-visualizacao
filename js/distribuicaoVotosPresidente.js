@@ -1,8 +1,7 @@
 // Definição do tamanho do elemento svg na tela
 let width = 190,
     height = 190,
-    scale = 180,
-    margin = {top: 5, left: 5};
+    scale = 180;
 
 // Escolha da projeção mercator e definição do centro do mapa
 let projection = d3.geo.mercator()
@@ -19,6 +18,7 @@ d3_queue.queue()
     .defer(d3.json, "data/br-states.json")
     .await(ready);
 
+// Cria os elementos svg nas posições indicadas
 let svg1 = d3.select("#svg1").append("svg")
             .attr("height", height);
 
@@ -71,7 +71,7 @@ function ready(error, shp) {
   let states = topojson.feature(shp, shp.objects.estados);
   let states_contour = topojson.mesh(shp, shp.objects.estados);
 
-  // Desenhando e colorindo os estados
+  // Desenha e colore os estados - Presidenciavel 1
   g1.attr("class", "state")
     .selectAll("path")
     .data(states.features)
@@ -79,14 +79,18 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[0]);
+      // calcula a cor do estado de acordo com a concentração de votos do
+      // candidato no estado atual
       return color(votos);
     }).attr("d", path);
 
+  // Desenha o contorno dos estados - Presidenciável 1
   g1.append("path")
    .datum(states_contour)
    .attr("d", path)
    .attr("class", "state_contour");
 
+  // Desenha e colore os estados - Presidenciavel 2
   g2.attr("class", "state")
     .selectAll("path")
     .data(states.features)
@@ -94,14 +98,18 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[1]);
+      // calcula a cor do estado de acordo com a concentração de votos do
+      // candidato no estado atual
       return color(votos);
     }).attr("d", path);
 
+  // Desenha o contorno dos estados - Presidenciável 2
   g2.append("path")
    .datum(states_contour)
    .attr("d", path)
    .attr("class", "state_contour");
 
+  // Desenha e colore os estados - Presidenciavel 3
   g3.attr("class", "state")
     .selectAll("path")
     .data(states.features)
@@ -109,14 +117,18 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[2]);
+      // calcula a cor do estado de acordo com a concentração de votos do
+      // candidato no estado atual
       return color(votos);
     }).attr("d", path);
 
+  // Desenha o contorno dos estados - Presidenciável 3
   g3.append("path")
    .datum(states_contour)
    .attr("d", path)
    .attr("class", "state_contour");
 
+  // Desenha e colore os estados - Presidenciavel 4
   g4.attr("class", "state")
     .selectAll("path")
     .data(states.features)
@@ -124,14 +136,18 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[3]);
+      // calcula a cor do estado de acordo com a concentração de votos do
+      // candidato no estado atual
       return color(votos);
     }).attr("d", path);
 
+  // Desenha o contorno dos estados - Presidenciável 4
   g4.append("path")
    .datum(states_contour)
    .attr("d", path)
    .attr("class", "state_contour");
 
+  // Desenha e colore os estados - Presidenciavel 5
   g5.attr("class", "state")
     .selectAll("path")
     .data(states.features)
@@ -139,14 +155,18 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[4]);
+      // calcula a cor do estado de acordo com a concentração de votos do
+      // candidato no estado atual
       return color(votos);
     }).attr("d", path);
 
+  // Desenha o contorno dos estados - Presidenciável 5
   g5.append("path")
    .datum(states_contour)
    .attr("d", path)
    .attr("class", "state_contour");
 
+  // Desenha e colore os estados - Presidenciavel 6
   g6.attr("class", "state")
     .selectAll("path")
     .data(states.features)
@@ -154,14 +174,18 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[5]);
+      // calcula a cor do estado de acordo com a concentração de votos do
+      // candidato no estado atual
       return color(votos);
     }).attr("d", path);
 
+  // Desenha o contorno dos estados - Presidenciável 6
   g6.append("path")
    .datum(states_contour)
    .attr("d", path)
    .attr("class", "state_contour");
 
+  // Desenha e colore os estados - Presidenciavel 7
   g7.attr("class", "state")
     .selectAll("path")
     .data(states.features)
@@ -169,14 +193,18 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[6]);
+      // calcula a cor do estado de acordo com a concentração de votos do
+      // candidato no estado atual
       return color(votos);
     }).attr("d", path);
 
+  // Desenha o contorno dos estados - Presidenciável 7
   g7.append("path")
    .datum(states_contour)
    .attr("d", path)
    .attr("class", "state_contour");
 
+  // Desenha e colore os estados - Presidenciavel 8
   g8.attr("class", "state")
     .selectAll("path")
     .data(states.features)
@@ -184,14 +212,18 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[7]);
+      // calcula a cor do estado de acordo com a concentração de votos do
+      // candidato no estado atual
       return color(votos);
     }).attr("d", path);
 
+  // Desenha o contorno dos estados - Presidenciável 8
   g8.append("path")
    .datum(states_contour)
    .attr("d", path)
    .attr("class", "state_contour");
 
+  // Desenha e colore os estados - Presidenciavel 9
   g9.attr("class", "state")
     .selectAll("path")
     .data(states.features)
@@ -199,14 +231,18 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[8]);
+      // calcula a cor do estado de acordo com a concentração de votos do
+      // candidato no estado atual
       return color(votos);
     }).attr("d", path);
 
+  // Desenha o contorno dos estados - Presidenciável 9
   g9.append("path")
    .datum(states_contour)
    .attr("d", path)
    .attr("class", "state_contour");
 
+  // Desenha e colore os estados - Presidenciavel 10
   g10.attr("class", "state")
     .selectAll("path")
     .data(states.features)
@@ -214,24 +250,31 @@ function ready(error, shp) {
     .append("path")
     .style('fill', function(d){
       let votos = calculaPercentualVotosNoEstado(d.id, presidents[9]);
+      // calcula a cor do estado de acordo com a concentração de votos do
+      // candidato no estado atual
       return color(votos);
     }).attr("d", path);
 
+  // Desenha o contorno dos estados - Presidenciável 10
   g10.append("path")
    .datum(states_contour)
    .attr("d", path)
    .attr("class", "state_contour");
 
+  // Desenha e colore os estados - Presidenciavel 11
   g11.attr("class", "state")
    .selectAll("path")
    .data(states.features)
    .enter()
    .append("path")
    .style('fill', function(d){
-     let votos = calculaPercentualVotosNoEstado(d.id, presidents[9]);
+     let votos = calculaPercentualVotosNoEstado(d.id, presidents[10]);
+     // calcula a cor do estado de acordo com a concentração de votos do
+     // candidato no estado atual
      return color(votos);
    }).attr("d", path);
 
+  // Desenha o contorno dos estados - Presidenciável 11
   g11.append("path")
   .datum(states_contour)
   .attr("d", path)
@@ -239,6 +282,7 @@ function ready(error, shp) {
 
 }
 
+// Função que calcula o percentual de votos de cada candidato em cada estado
 function calculaPercentualVotosNoEstado(estado, candidato){
 
   let turno = 1;
